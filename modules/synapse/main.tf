@@ -5,7 +5,7 @@ locals {
 }
 
 resource "azurerm_storage_account" "synapse_storage" {
-  name                     = "fstasynrg22weudev"  #"synapsestorage${random_string.suffix.result}"
+  name                     = "fstasynrg23weudev"  #"synapsestorage${random_string.suffix.result}"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
@@ -44,7 +44,7 @@ resource "azurerm_synapse_workspace" "synapse" {
 resource "null_resource" "create_sql_serverless_db" {
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
-    command = <<-EOT
+    command = <<EOT
     sleep 60
     MAX_RETRIES=5
     RETRY_DELAY=15
