@@ -21,10 +21,10 @@
 # }
 
 # Resource Group
-resource "azurerm_resource_group" "rg_pc" {
-  name = var.rg_pc_name
-  location = var.location
-}
+# resource "azurerm_resource_group" "rg_pc" {
+#   name = var.rg_pc_name
+#   location = var.location
+# }
 module "key_vault" {
   source = "./modules/key_vault"
 
