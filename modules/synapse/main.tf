@@ -5,7 +5,7 @@ locals {
 }
 
 resource "azurerm_storage_account" "synapse_storage" {
-  name                     = "fstasynrg23weudev"  #"synapsestorage${random_string.suffix.result}"
+  name                     = "fstasynrg24weudev"  #"synapsestorage${random_string.suffix.result}"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
@@ -45,27 +45,9 @@ resource "null_resource" "create_sql_serverless_db" {
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
     command = <<EOT
-    sleep 60
-    MAX_RETRIES=5
-    RETRY_DELAY=15
-
-    for i in $(seq 1 $MAX_RETRIES); do
-    echo "Attempt $i: creating database '${var.sql_serverless_db_name}'..."
-
+    sleep 300
     /opt/mssql-tools18/bin/sqlcmd -S "${var.name}-ondemand.sql.azuresynapse.net" -d master -U "${var.sql_administrator_login}" -P "${var.sql_administrator_password}" -Q "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = '${var.sql_serverless_db_name}') CREATE DATABASE ['${var.sql_serverless_db_name}'];"
-
-    if [ $? -eq 0 ]; then
-          echo "Database '${var.sql_serverless_db_name}' created successfully."
-          exit 0
-        else
-          echo "Failed to create database. Will retry in $RETRY_DELAY seconds..."
-          sleep $RETRY_DELAY
-        fi
-      done
-
-      echo "All $MAX_RETRIES attempts failed. Exiting with error."
-      exit 1
-      
+     
 EOT
   }
 
