@@ -26,6 +26,7 @@ resource "azurerm_resource_group" "rg_pc" {
   location = var.location
 }
 
+
 module "key_vault" {
   source = "./modules/key_vault"
 
