@@ -1,5 +1,5 @@
 keyvault = {
-  name                        = "KVTESTFERTI4"
+  name                        = "KVTESTFERTI5"
   enabled_for_disk_encryption = true
   soft_delete_retention_days  = 7
   purge_protection_enabled    = false
