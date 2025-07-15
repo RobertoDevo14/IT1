@@ -24,6 +24,7 @@ locals {
 resource "azurerm_resource_group" "rg_pc" {
   name = var.rg_pc_name
   location = var.location
+  
 }
 
 
