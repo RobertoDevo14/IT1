@@ -32,7 +32,7 @@ jobs:
           sudo ACCEPT_EULA=Y apt-get install -y mssql-tools18 unixodbc-dev
           echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> $GITHUB_ENV
           /opt/mssql-tools18/bin/sqlcmd -?
-          sudo mv sqlcmd /usr/local/bin/sqlcmd
+          sudo mv sqlcmd /opt/mssql-tools18/bin/sqlcmd
           chmod +x /usr/local/bin/sqlcmd
           
           
