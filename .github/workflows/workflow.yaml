@@ -26,7 +26,7 @@ jobs:
         run: |
           terraform plan \
             -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" \
-            -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" \
+            -var="client_secret=${{ secrets.AZURE_SECRET }}" \
             -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
 
       - name: Terraform Apply
