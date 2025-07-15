@@ -1,5 +1,5 @@
 keyvault = {
-  name                        = "KVTESTFERTI21"
+  name                        = "KVTESTFERTI22"
   enabled_for_disk_encryption = true
   soft_delete_retention_days  = 7
   purge_protection_enabled    = false
@@ -19,7 +19,7 @@ tags = {
 }
 
 synapse = {
-  name                             = "ferdatasynapse21weudevtest"
+  name                             = "ferdatasynapse22weudevtest"
   storage_data_lake_gen2_filesystem_id = ""
   sql_administrator_login          = "adminuser"
   sql_administrator_password       = "Aq7!xP2vR9sL@eT4zW1u" # Ejemplo seguro, puedes cambiarlo si lo deseas
