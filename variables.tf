@@ -76,10 +76,9 @@ variable "mysql_name"{
   default     = "mysql-pc"
 }
 
-variable "rsg_name"{
+variable "resource_group_name"{
   type        = string
   description = "RG Name"
-  default     = "rg-pc"
 }
 
   variable "tenant_id"  {

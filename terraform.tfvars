@@ -23,6 +23,6 @@ synapse = {
   storage_data_lake_gen2_filesystem_id = ""
   sql_administrator_login          = "adminuser"
   sql_administrator_password       = "Aq7!xP2vR9sL@eT4zW1u" # Ejemplo seguro, puedes cambiarlo si lo deseas
-  location = "East US"
+  location = "East US 2"
   sql_serverless_db_name = "fer_dw_test"
 }
