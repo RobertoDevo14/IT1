@@ -79,6 +79,7 @@ variable "mysql_name"{
 variable "resource_group_name"{
   type        = string
   description = "RG Name"
+  default = "rg_des_pc"
 }
 
   variable "tenant_id"  {
