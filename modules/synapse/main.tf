@@ -5,7 +5,7 @@ locals {
 }
 
 resource "azurerm_storage_account" "synapse_storage" {
-  name                     = "fstasynrg01weudev02"  #"synapsestorage${random_string.suffix.result}"
+  name                     = "fstasynrg02weudev"  #"synapsestorage${random_string.suffix.result}"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
