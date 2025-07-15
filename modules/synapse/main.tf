@@ -43,9 +43,9 @@ resource "azurerm_synapse_workspace" "synapse" {
 
 resource "null_resource" "create_sql_serverless_db" {
   provisioner "local-exec" {
-    interpreter = ["cmd", "-c"]
+    interpreter = ["bash", "-c"]
     command = <<-EOT
-    c:/sqlcmd/sqlcmd.exe -S ${var.name}-ondemand.sql.azuresynapse.net -d master -U ${var.sql_administrator_login} -P ${var.sql_administrator_password} -Q "CREATE DATABASE ['${var.sql_serverless_db_name}'];"
+    /opt/mssql-tools18/bin/sqlcmd -S "${var.name}-ondemand.sql.azuresynapse.net" -d master -U "${var.sql_administrator_login}" -P "${var.sql_administrator_password}" -Q "CREATE DATABASE ['${var.sql_serverless_db_name}'];"
 
 EOT
   }
